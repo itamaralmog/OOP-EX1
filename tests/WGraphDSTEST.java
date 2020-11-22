@@ -4,12 +4,9 @@ import ex1.src.WGraph_DS;
 import ex1.src.*;
 import org.junit.jupiter.api.Test;
 
-import java.util.Random;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class WGraphDSTEST {
-    private static Random _rnd = null;
     @Test
     void hasEdge(){
         weighted_graph gW = small_graph();
@@ -75,16 +72,13 @@ public class WGraphDSTEST {
             g.removeNode(i);
             assertEquals(11-i-1,g.nodeSize());
         }
-        System.out.println(g);
         g.addNode(10);
-        System.out.println(g);
         assertEquals(2,g.nodeSize());
     }
     @Test
     void removeEdge() {
         weighted_graph gW = small_graph();
         WGraph_DS g = (WGraph_DS) gW;
-        System.out.println(g);
         assertEquals(15,g.edgeSize());
         for(int i = 0; i< 17;++i){
             g.removeEdge(i,i+1);
@@ -99,7 +93,7 @@ public class WGraphDSTEST {
         WGraph_DS g1 = (WGraph_DS) gW1;
         weighted_graph gW2 = small_graph();
         WGraph_DS g2 = (WGraph_DS) gW2;
-        assertTrue(g1.equals(g2));
+        assertEquals(g1,g2);
         g1.removeEdge(1,0);
         assertFalse(g1.equals(g2));
         g1.connect(1,0,4);
