@@ -1,8 +1,12 @@
 package ex1.tests;
 
+import ex1.src.node_info;
 import ex1.src.*;
 import org.junit.jupiter.api.Test;
+import ex1.src.WGraph_Algo;
+
 import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class WGraphATest {
@@ -12,7 +16,7 @@ class WGraphATest {
     {
         weighted_graph gW= WGraphDSTEST.small_graph();
         WGraph_DS g0= (WGraph_DS)gW;
-        System.out.println(g0);
+        //System.out.println(g0);
         WGraph_Algo gA0=new WGraph_Algo();
         gA0.init(g0);
         WGraph_DS g1= (WGraph_DS)gA0.copy();
